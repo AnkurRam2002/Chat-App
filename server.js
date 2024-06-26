@@ -32,14 +32,14 @@ io.on('connection', socket => {
       .to(user.room)
       .emit(
         'message',
-        formatMessage("WebCage", `${user.username} has joined the room`)
+        formatMessage("Admin", `${user.username} has joined the room`)
       );
 
-      // Current active users and room name
+    // Current active users and room name
     io.to(user.room).emit('roomUsers', {
-        room: user.room,
-        users: getIndividualRoomUsers(user.room)
-      });
+      room: user.room,
+      users: getIndividualRoomUsers(user.room)
+    });
   });
 
   // Listen for client message
@@ -70,4 +70,4 @@ io.on('connection', socket => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => console.log(`App is live on port ${PORT}`));
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
