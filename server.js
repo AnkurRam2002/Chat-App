@@ -42,4 +42,11 @@ io.on('connection', socket => {
       });
   });
 
+  // Listen for client message
+  socket.on('chatMessage', msg => {
+    const user = getActiveUser(socket.id);
+
+    io.to(user.room).emit('message', formatMessage(user.username, msg));
+  });
+
 app.listen(PORT, () => console.log(`App is live on port ${PORT}`))
