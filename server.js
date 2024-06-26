@@ -34,6 +34,12 @@ io.on('connection', socket => {
         'message',
         formatMessage("WebCage", `${user.username} has joined the room`)
       );
+
+      // Current active users and room name
+    io.to(user.room).emit('roomUsers', {
+        room: user.room,
+        users: getIndividualRoomUsers(user.room)
+      });
   });
 
 app.listen(PORT, () => console.log(`App is live on port ${PORT}`))
