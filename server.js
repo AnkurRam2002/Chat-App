@@ -49,4 +49,25 @@ io.on('connection', socket => {
     io.to(user.room).emit('message', formatMessage(user.username, msg));
   });
 
-app.listen(PORT, () => console.log(`App is live on port ${PORT}`))
+  // Runs when client disconnects
+  socket.on('disconnect', () => {
+    const user = exitRoom(socket.id);
+
+    if (user) {
+      io.to(user.room).emit(
+        'message',
+        formatMessage("WebCage", `${user.username} has left the room`)
+      );
+
+      // Current active users and room name
+      io.to(user.room).emit('roomUsers', {
+        room: user.room,
+        users: getIndividualRoomUsers(user.room)
+      });
+    }
+  });
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log(`App is live on port ${PORT}`));
