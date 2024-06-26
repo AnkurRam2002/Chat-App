@@ -23,6 +23,17 @@ io.on('connection', socket => {
     const user = newUser(socket.id, username, room);
 
     socket.join(user.room);
+
+    // General welcome
+    socket.emit('message', formatMessage("Admin", 'Messages are limited to this room! '));
+
+    // Broadcast everytime users connects
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        'message',
+        formatMessage("WebCage", `${user.username} has joined the room`)
+      );
   });
 
 app.listen(PORT, () => console.log(`App is live on port ${PORT}`))
