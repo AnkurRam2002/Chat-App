@@ -4,7 +4,8 @@ This project is a real-time chat application built using HTML, CSS, JavaScript, 
 <h3>Features</h3>
 
 - Real-Time Communication: Multiple users can chat with each other in real-time.
-- WebSocket Integration: Utilizes WebSockets for efficient bi-directional communication.
+- User-Friendly Interface: Clean and simple UI for easy chatting.
+- Timestamped Messages: Messages are timestamped using Moment.js.
 - Responsive Design: Mobile-friendly UI using custom CSS.
 
 <h3>Technologies Used</h3>
