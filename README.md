@@ -9,6 +9,6 @@ This project is a real-time chat application built using HTML, CSS, JavaScript, 
 
 <h3>Technologies Used</h3>
 
-Socket.IO: Library for real-time web applications.
-WebSockets: Protocol for two-way communication between client and server.
-Render: Cloud platform for deployment.
+- Socket.IO: Library for real-time web applications.
+- WebSockets: Protocol for two-way communication between client and server.
+- Render: Cloud platform for deployment.
