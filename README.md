@@ -12,4 +12,5 @@ This project is a real-time chat application built using HTML, CSS, JavaScript, 
 
 - Socket.IO: Library for real-time web applications.
 - WebSockets: Protocol for two-way communication between client and server.
+- Moment.js: Library for parsing, validating, manipulating, and formatting dates.
 - Render: Cloud platform for deployment.
