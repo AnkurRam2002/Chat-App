@@ -1,5 +1,5 @@
 <h1 align="center">Chat App</h1>
-This project is a real-time chat application built using HTML, CSS, JavaScript, Socket.IO, and WebSockets. The app allows multiple users to chat with each other in real-time by opening different instances of the app. The application is deployed on Render.
+WhatsUp is a real-time chat application built using HTML, CSS, JavaScript, Socket.IO, and WebSockets. The app allows multiple users to chat with each other in real-time by opening different instances of the app. The application is deployed on Render.
 
 <h3>Features</h3>
 
